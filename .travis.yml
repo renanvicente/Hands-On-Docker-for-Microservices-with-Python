@@ -39,14 +39,21 @@ jobs:
     - cd Chapter04
     - docker-compose build server
     - docker tag thoughts_server:latest renanvicente/thoughts-backend:$GIT_SHA
+    - docker tag thoughts_backend_db:latest renanvicente/thoughts-backend-db:$GIT_SHA
     - docker push renanvicente/thoughts-backend:$GIT_SHA
+    - docker push renanvicente/thoughts-backend-db:$GIT_SHA
     - docker tag thoughts_server:latest renanvicente/thoughts-backend:$TRAVIS_BRANCH
+    - docker tag thoughts_backend_db:latest renanvicente/thoughts-backend-db:$TRAVIS_BRANCH
     deploy:
     - provider: script
-      script: docker push renanvicente/thoughts-backend:$TRAVIS_BRANCH
+      script:
+      - docker push renanvicente/thoughts-backend:$TRAVIS_BRANCH
+      - docker push renanvicente/thoughts-backend-db:$TRAVIS_BRANCH
       on:
         branch: master
     - provider: script
-      script: docker push renanvicente/thoughts-backend:$TRAVIS_TAG
+      script:
+      - docker push renanvicente/thoughts-backend:$TRAVIS_TAG
+      - docker push renanvicente/thoughts-backend-db:$TRAVIS_TAG
       on:
         tags: true
