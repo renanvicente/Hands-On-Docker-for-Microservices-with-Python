@@ -37,7 +37,7 @@ spec:
         # There are no ":latest" images for flux. Find the most recent
         # release or image version at https://hub.docker.com/r/weaveworks/flux/tags
         # and replace the tag here.
-        image: docker.io/fluxcd/flux:1.13.3
+        image: docker.io/fluxcd/flux:1.14.2
         imagePullPolicy: IfNotPresent
         resources:
           requests:
@@ -63,11 +63,11 @@ spec:
         - --ssh-keygen-dir=/var/fluxd/keygen
 
         # Replace the following URL to change the Git repository used by Flux.
-        - --git-url=git@github.com:PacktPublishing/Hands-On-Docker-for-Microservices-with-Python.git
+        - --git-url=git@github.com:renanvicente/Hands-On-Docker-for-Microservices-with-Python.git
         - --git-branch=master
           # include this if you want to restrict the manifests considered by flux
           # to those under the following relative paths in the git repository
-        - --git-path=ch8/example
+        - --git-path=Chapter08/example
 
         # Serve /metrics endpoint at different port;
         # make sure to set prometheus' annotation to scrape the port value.

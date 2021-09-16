@@ -18,7 +18,7 @@ spec:
         spec:
             containers:
                 - name: thoughts-backend-service
-                  image: 033870383707.dkr.ecr.us-west-2.amazonaws.com/thoughts_server:latest
+                  image: 371044371643.dkr.ecr.ap-southeast-2.amazonaws.com/thoughts_server:latest
                   imagePullPolicy: Always
                   ports:
                      - containerPort: 8000
@@ -37,6 +37,6 @@ spec:
                         value: "127.0.0.1"
 
                 - name: thoughts-backend-db
-                  image: 033870383707.dkr.ecr.us-west-2.amazonaws.com/thoughts_backend_db:latest
+                  image: 371044371643.dkr.ecr.ap-southeast-2.amazonaws.com/thoughts_backend_db:latest
                   imagePullPolicy: Always
 

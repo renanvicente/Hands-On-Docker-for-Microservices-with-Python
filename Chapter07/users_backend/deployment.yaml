@@ -18,7 +18,7 @@ spec:
         spec:
             containers:
                 - name: users-backend-service
-                  image: 033870383707.dkr.ecr.us-west-2.amazonaws.com/users_server:latest
+                  image: 371044371643.dkr.ecr.ap-southeast-2.amazonaws.com/users_server:latest
                   imagePullPolicy: Always
                   ports:
                      - containerPort: 8000
@@ -37,5 +37,5 @@ spec:
                         value: "127.0.0.1"
 
                 - name: users-backend-db
-                  image: 033870383707.dkr.ecr.us-west-2.amazonaws.com/users_backend_db:latest
+                  image: 371044371643.dkr.ecr.ap-southeast-2.amazonaws.com/users_backend_db:latest
                   imagePullPolicy: Always

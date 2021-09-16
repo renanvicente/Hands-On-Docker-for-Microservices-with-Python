@@ -129,3 +129,4 @@ dmypy.json
 # Mac files
 .DS_Store
 # End of https://www.gitignore.io/api/python
+Chapter04/pass_ignore
